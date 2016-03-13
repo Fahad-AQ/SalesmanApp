@@ -1,0 +1,31 @@
+<ion-view view="Signup">
+    <ion-content>
+         <div class="text-center">
+     <h2 class="textColor">Signup</h2>
+ <br />
+ <form ng-submit="signup(user)">
+            <div class="list list-inset">
+                 <label class="item item-input">
+                    Name : &nbsp;
+                    <input type="text" ng-model="user.name"  placeholder="Name">
+                </label>
+                <label class="item item-input">
+                    Email : &nbsp;
+                    <input type="text" ng-model="user.email"  placeholder="Email">
+                </label>
+                <label class="item item-input">
+                    Password : &nbsp;
+                    <input type="password" ng-model="user.password"  placeholder="Password">
+                </label>
+            </div>
+            <button class="button button-block button-calm" type="submit" >Signup</button>
+   </form>
+  <br />
+    <p>Already Signup?</p>
+   <a href='#/login'>Login</a>
+   
+  <br />
+         </div>
+    </ion-content>
+    
+    </ion-view>

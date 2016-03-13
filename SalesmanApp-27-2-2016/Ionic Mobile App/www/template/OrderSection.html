@@ -1,0 +1,27 @@
+<ion-view view-title="Order Section" class="tour">
+    <ion-content >
+        <div>
+        <form>
+            <h1 class="head_head"><span>Order Section</span></h1>
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" required="" ng-model="read.details.productName" placeholder="Name">
+                </label>
+                 <label class="item item-input item-floating-label">
+                    <span class="input-label">Price</span>
+                    <input type="text" required="" ng-model="read.details.productPrice" placeholder="Price">
+                </label>
+                 <label class="item item-input item-floating-label">
+                    <span class="input-label">Quantity</span>
+                    <input type="text" required="" ng-model="read.details.productQuantity" placeholder="Quantity">
+                </label>
+                <br />
+               <button ng-click="read.showMap()" class="button button-balanced">Get Location</button>       
+               <div ng-show="read.showMapthis" id="googleMap" style="width:500px;height:380px;"></div>
+               <button ng-click="read.saveOrder(read.details)" class="button button-block button-balanced">Order</button>
+   
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

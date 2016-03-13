@@ -1,0 +1,37 @@
+<ion-view view-title="Login" >
+    <ion-content style="background: url(img/login.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1>Salesman Logins</h1>
+            </div>
+        </div>
+        <div class="padding">
+            <label ng-show="errorMessage" class="alert alert-danger item">
+                {{errorMessage}}
+            </label>
+        </div>
+        <form  ng-submit="login(salesman)">
+            <div class="row">
+                <div class="col col-10">&nbsp;</div>
+                <div class="col col-80">
+                    <div class="list">
+                        <ion-md-input ng-model="salesman.email" placeholder="Email" highlight-color="balanced" type="text"></ion-md-input>
+                        <ion-md-input ng-model="salesman.password" placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
+                    </div>
+                    <div class="padding">
+                        <button type="submit" class="button button-full button-assertive ink">Login</button>
+                    </div>
+                </div>
+                <div class="col col-10">&nbsp;</div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col col-20">&nbsp;</div>
+            <div class="col col-20">&nbsp;</div>
+            <div class="col col-20" style="background:#ffffff;"><img class="col" ng-src="img/InsideSales.png"></div>
+            <div class="col col-20">&nbsp;</div>
+            <div class="col col-20">&nbsp;</div>
+        </div>
+    </ion-content>
+</ion-view>

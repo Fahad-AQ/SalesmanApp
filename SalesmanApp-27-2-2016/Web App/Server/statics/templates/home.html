@@ -1,0 +1,93 @@
+<ion-view view="Home" >
+    <ion-content>
+        <div class="text-center">
+        <h1 class="textColor" >
+            Welcome {{currentUser.name}}
+        </p>          
+        </h1>
+        <p class="logoutRight">
+            <button ng-click="logout()" class="button button-assertive">
+                Logout
+            </button>
+        </p>     
+        
+        <div ng-hide="dataCompany.companyName" >
+            <div class="list list-inset" >
+                <label class="item item-input">
+                   Company Name : &nbsp;
+                    <input type="text" ng-model="data.companyName"  placeholder="companyName">
+                </label>
+                <label class="item item-input">
+                   Location : &nbsp;
+                    <input type="text" ng-model="data.Location"  placeholder="Location">
+                </label>
+                 <label class="item item-input">
+                    Phone Number : &nbsp;
+                    <input type="number" ng-model="data.PhoneNumber"  placeholder="PhoneNumber">
+                </label>
+            </div>
+            <button class="button button-block button-calm" ng-click="addCompany(data)" >Add Company</button>
+        </div>
+        
+        <h1 ng-show="dataCompany.companyName" class="back">  {{dataCompany.companyName}}  </h1>
+         
+         
+         <div ng-show="dataCompany.companyName" >
+            <div class="list list-inset" >
+                <label class="item item-input">
+                   SalesMan : &nbsp;
+                    <input type="text" ng-model="salesman.name"  placeholder="Salesman Name">
+                </label>
+                <label class="item item-input">
+                   Location : &nbsp;
+                    <input type="text" ng-model="salesman.location"  placeholder="Location">
+                </label>
+                 <label class="item item-input">
+                    Phone Number : &nbsp;
+                    <input type="number" ng-model="salesman.phoneNumber"  placeholder="PhoneNumber">
+                </label>
+                <label class="item item-input">
+                    Email : &nbsp;
+                    <input type="text" ng-model="salesman.email"  placeholder="Email">
+                </label>
+                <label class="item item-input">
+                    Password : &nbsp;
+                    <input type="text" ng-model="salesman.password"  placeholder="Password">
+                </label>
+            </div>
+            <button class="button button-block button-calm" ng-click="addSalesmans(salesman)" >Add Salesman</button>
+        </div>
+       </div>
+       <div class="salesman-list">        
+          <h3 class="salesman-header" >Salesman list</h3>
+             <div class="list">
+                <a  ng-repeat="salesmans in dataCompany.Salesman" class="item item-avatar" href="#">
+                <h2>{{salesmans.name}}</h2>
+                <p>Location : {{salesmans.location}}</p>
+                <p>PhoneNumber : {{salesmans.phoneNumber}}</p>
+                <p>Email : {{salesmans.email}}</p>
+                <p>Password : {{salesmans.password}}</p>
+                <button class="button button-calm" ng-click="getSaleman(salesmans)" >Salesman Orders</button>
+                </a>
+            </div>
+
+                <div class="list" ng-show="salesmans !== null">  
+                <h3 ng-show="showMapthis" class="salesman-header" >Order Location</h3>              
+                <div ng-show="showMapthis" id="googleMap" style="width:500px;height:380px;"></div> 
+                 <h3 class="salesman-header" >Order list</h3>            
+                <a  ng-repeat="salesmansOrder in arrayOrder" class="item item-avatar" href="#" class="item-button-right">
+                <p>salesmanName : {{salesmansOrder.salesmanName}}</p>
+                <p>productName : {{salesmansOrder.productName}}</p>
+                <p>productPrice : {{salesmansOrder.productPrice}}</p>
+                <p>productQuantity : {{salesmansOrder.productQuantity}}</p>
+                <button class="button button-calm" ng-click="removeOrders(salesmansOrder,salesmansOrder.$id)" >Delivered</button>
+                <button class="button button-calm" ng-click="showMap(salesmansOrder.location)" >Get Location</button>
+
+                </a>
+            </div>
+            
+                
+        </div>
+    </ion-content>
+    
+    </ion-view>

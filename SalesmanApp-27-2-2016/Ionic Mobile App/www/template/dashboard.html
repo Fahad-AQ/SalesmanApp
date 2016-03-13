@@ -1,0 +1,22 @@
+<ion-view view-title="Dashboard">
+  <ion-header-bar class="bar-light bar-subheader">
+    <input type="text" placeholder="Search Questionnaire" data-ng-model="dash.searchForce" style="width:100%; margin:10px;" class="padding">
+  </ion-header-bar>
+  <ion-content class="has-header">
+       <div class="saleman-header">
+                <h1>{{dash.arrayDashboard.name}}</h1>
+    </div>
+     <div class="list" ng-show="salesmans !== null"> 
+                       <h3 ng-show="dash.showMaplocationthis" class="salesman-header" >Order Location</h3>
+                        <div ng-show="dash.showMaplocationthis" id="googleMaplocation" style="width:500px;height:380px;"></div>
+                     <h3 class="salesman-header" >Order list</h3>
+                <a  ng-repeat="salesmansOrder in dash.arrayDashboard" class="item item-avatar" href="#">
+                <p>salesmanName : {{salesmansOrder.salesmanName}}</p>
+                <p>productName : {{salesmansOrder.productName}}</p>
+                <p>productPrice : {{salesmansOrder.productPrice}}</p>
+                <p>productQuantity : {{salesmansOrder.productQuantity}}</p>
+                <button ng-click="dash.getLocationOrder(salesmansOrder.location)" class="button button-balanced">Order location</button>
+                </a>
+            </div>
+  </ion-content>
+</ion-view>

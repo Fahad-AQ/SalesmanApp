@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fahad-AQ/SalesmanApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fahad-AQ/SalesmanApp/issues"
+  },
+  "homepage": "https://github.com/Fahad-AQ/SalesmanApp#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "firebase": "^2.3.2",
+    "mongoose": "^4.3.4",
+    "node": "0.0.0",
+    "q": "^1.4.1"
+  }
+}
